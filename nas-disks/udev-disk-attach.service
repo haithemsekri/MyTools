@@ -1,0 +1,13 @@
+[Unit]
+Description=udev disk attach
+After=systemd-udevd.service
+Requires=systemd-udevd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/udev-disk-attach.sh --cmd add --dev all --keep yes
+ExecStop=/usr/bin/udev-disk-attach.sh --cmd remove --dev all
+
+[Install]
+WantedBy=multi-user.target
+

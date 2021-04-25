@@ -1,0 +1,9 @@
+[Unit]
+Description=autosleep handler
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/wait_until_idle.sh
+
+[Install]
+WantedBy=multi-user.target

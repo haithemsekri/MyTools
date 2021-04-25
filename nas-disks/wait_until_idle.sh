@@ -2,7 +2,6 @@
 
 while true;
 do
-
 echo "wait until idle"
 /usr/bin/wait_until_idle  95 32768 100 #Delay time until sleep 10x100 seconds
 echo "idle"
@@ -17,5 +16,4 @@ echo "exit sleep: " $(date +%s)
 
 /usr/bin/udev-disk-attach.sh --cmd poweron  --dev all --keep no
 systemctl restart smbd nmbd
-echo "Mount OK Restart"
 done
